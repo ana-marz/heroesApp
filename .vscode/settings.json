@@ -60,7 +60,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Dobri Next -A07- Oxford",
+  "workbench.colorTheme": "Dobri Next -C03- Cupcake",
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#a71ab9ad",
     "titleBar.activeForeground": "#ffffff",
