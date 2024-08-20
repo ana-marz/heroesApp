@@ -44,7 +44,7 @@
           <button mat-raised-button color="accent" (click)="onSubmit()">
             <mat-icon>save</mat-icon>Guardar
           </button>
-          <button mat-raised-button color="primary" *ngIf="currentHero.id">
+          <button mat-raised-button color="primary" *ngIf="currentHero.id" (click)="onConfirmDelete()">
             <mat-icon>delete</mat-icon>Eliminar
           </button>
         </div>
