@@ -166,6 +166,15 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "id": "DsNYlxW",
+      "superhero": "Ana",
+      "publisher": "DC Comics",
+      "alter_ego": "Wonder",
+      "first_appearance": "Mad #2014",
+      "characters": "Ana",
+      "alt_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpOLN7bxZSDgo6Nhg7FJVLrCnXnnYA15G97w&s"
     }
   ]
 }
