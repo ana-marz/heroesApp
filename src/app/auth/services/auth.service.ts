@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environments } from 'src/environments/environments';
 import { User } from '../interfaces/user';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -21,11 +21,20 @@ export class AuthService {
   login(email: string, password: string): Observable<User> {
     // http.post('login, {email, password});
 
-    return this.http.get<User>(`${this.baseUrl}/users/1`)
-      .pipe(
-        tap(user => this.user = user),
-        tap(user => localStorage.setItem('token', 'asvefevs.afefdsfdsf.fsfefd')),
-      );
+    return this.http.get<User>(`${this.baseUrl}/users/1`).pipe(
+      tap((user) => (this.user = user)),
+      tap((user) => localStorage.setItem('token', 'asvefevs.afefdsfdsf.fsfefd'))
+    );
+  }
+
+  checkAuth(): Observable<boolean> | boolean {
+    if (!localStorage.getItem('token')) return false;
+    const token = localStorage.getItem('token');
+    return this.http.get<User>(`${this.baseUrl}/users/1`).pipe(
+      tap((user) => (this.user = user)),
+      map((user) => !!user),
+      catchError((err) => of(false))
+    );
   }
 
   logout() {
